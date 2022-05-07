@@ -1,3 +1,5 @@
+[![codecov](https://codecov.io/gh/matiushariman/react-spotify-clone-webapp/branch/main/graph/badge.svg?token=H8G6PIBHIG)](https://codecov.io/gh/matiushariman/react-spotify-clone-webapp)
+
 ## Getting Started
 
 ### Pre-requisite(s)
