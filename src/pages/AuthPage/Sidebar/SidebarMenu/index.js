@@ -11,12 +11,6 @@ const SIDEBAR_MENU = [
     InactiveMenuIcon: <PersonOutlineOutlinedIcon />,
     url: '/auth/profile',
   },
-  {
-    label: 'MENU_2',
-    ActiveMenuIcon: <PersonIcon />,
-    InactiveMenuIcon: <PersonOutlineOutlinedIcon />,
-    url: '/auth/test',
-  },
 ];
 
 export const SidebarMenu = () => (
