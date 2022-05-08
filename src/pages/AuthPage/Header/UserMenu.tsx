@@ -1,7 +1,5 @@
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import LogoutIcon from '@mui/icons-material/Logout';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
 
@@ -9,6 +7,7 @@ import Menu from '@mui/material/Menu';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 
+import { UserMenuAvatar } from './UserMenuAvatar';
 import { UserMenuItem } from './UserMenuItem';
 import { selectDisplayName, selectExternalUrl } from '../selectors';
 
@@ -37,11 +36,7 @@ export const UserMenu = () => {
       <Button
         size="small"
         color="secondary"
-        startIcon={
-          <Avatar>
-            <AccountCircleIcon />
-          </Avatar>
-        }
+        startIcon={<UserMenuAvatar />}
         id="user-menu-button"
         aria-controls={open ? 'user-menu' : undefined}
         aria-haspopup="true"

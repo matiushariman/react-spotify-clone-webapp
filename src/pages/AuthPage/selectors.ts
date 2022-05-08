@@ -24,6 +24,16 @@ export const selectExternalUrl = createSelector(authPageSelector, (authPage) => 
   return null;
 });
 
+export const selectUserImage = createSelector(authPageSelector, (authPage) => {
+  if (authPage.profile !== null) {
+    if (authPage.profile.images && authPage.profile.images.length > 0) {
+      return authPage.profile.images[0].url;
+    }
+  }
+
+  return null;
+});
+
 // loading selectors
 export const selectIsGetMeLoading = (state: RootState): boolean =>
   createLoadingSelector([getMeRequest])(state);
