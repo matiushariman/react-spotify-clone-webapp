@@ -3,6 +3,7 @@ import { persistReducer } from 'redux-persist';
 import sessionStorage from 'redux-persist/lib/storage/session';
 
 import { appReducer } from 'App/reducer';
+import { authReducer } from 'pages/AuthPage/reducer';
 import { examplePageReducer } from 'pages/ExamplePage/reducer';
 import { toastReducer } from 'services/Toast/reducer';
 import { loadingReducer } from 'store/api/loading/reducer';
@@ -23,6 +24,7 @@ const createCombinedReducer = () =>
       success: successReducer,
     }),
     app: persistReducer(persistConfig, appReducer),
+    authPage: authReducer,
     examplePage: examplePageReducer,
     toast: toastReducer,
   });
