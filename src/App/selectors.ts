@@ -4,4 +4,4 @@ import type { RootState } from 'reducers';
 
 const appSelector = (state: RootState) => state.app;
 
-export const selectThemeMode = createSelector(appSelector, (app) => app.theme.mode);
+export const selectAccessToken = createSelector(appSelector, (app) => app.accessToken);
