@@ -18,8 +18,8 @@ export const UserAvatar = ({ width, height }: UserAvatarProps) => {
   }
 
   return (
-    <Avatar>
-      <AccountCircleIcon />
+    <Avatar sx={imageSize}>
+      <AccountCircleIcon sx={imageSize} />
     </Avatar>
   );
 };
