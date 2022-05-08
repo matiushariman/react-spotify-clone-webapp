@@ -27,6 +27,7 @@ export const SidebarMenuItem = ({
 
   return (
     <ListItemButton
+      aria-label={label}
       sx={{
         opacity: 0.6,
         transition: '0.4s',
