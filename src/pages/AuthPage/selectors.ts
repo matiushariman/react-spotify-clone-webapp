@@ -2,7 +2,7 @@ import { createSelector } from '@reduxjs/toolkit';
 
 import { createLoadingSelector } from 'store/api/loading/selectors';
 
-import { getMeRequest } from './actions';
+import { getMeRequest, getMyTopArtistsRequest } from './actions';
 
 import type { RootState } from 'reducers';
 
@@ -44,6 +44,19 @@ export const selectNoOfFollowers = createSelector(authPageSelector, (authPage) =
   return 0;
 });
 
+export const selectMyTopArtists = createSelector(authPageSelector, (authPage) => {
+  if (authPage.myTopArtists !== null) {
+    if (authPage.myTopArtists.items.length > 0) {
+      return authPage.myTopArtists.items;
+    }
+  }
+
+  return [];
+});
+
 // loading selectors
 export const selectIsGetMeLoading = (state: RootState): boolean =>
   createLoadingSelector([getMeRequest])(state);
+
+export const selectIsLoadingMyTopArtists = (state: RootState): boolean =>
+  createLoadingSelector([getMyTopArtistsRequest])(state);

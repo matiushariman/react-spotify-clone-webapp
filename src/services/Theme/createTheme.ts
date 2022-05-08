@@ -1,4 +1,4 @@
-import { createTheme } from '@mui/material/styles';
+import { createTheme, lighten } from '@mui/material/styles';
 
 export const theme = createTheme({
   custom: {
@@ -44,6 +44,14 @@ export const theme = createTheme({
           letterSpacing: 'normal',
           textTransform: 'uppercase',
         },
+      },
+    },
+    MuiCard: {
+      styleOverrides: {
+        root: ({ theme }) => ({
+          backgroundColor: lighten('#181818', 0.05),
+          color: theme.palette.common.white,
+        }),
       },
     },
     MuiDrawer: {
