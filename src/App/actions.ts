@@ -1,3 +1,3 @@
 import { createAction } from '@reduxjs/toolkit';
 
-export const toggleThemeMode = createAction('toggleThemeMode');
+export const setAccessToken = createAction<string>('setAccessToken');
