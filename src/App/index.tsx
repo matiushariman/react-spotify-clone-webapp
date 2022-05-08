@@ -7,12 +7,21 @@ import HomePage from 'pages/HomePage';
 import { NavigatorOnline } from 'services/NavigatorOnline';
 import { Toast } from 'services/Toast';
 
+import { ProtectedRoute } from './ProtectedRoute';
+
 const App = (): JSX.Element => (
   <>
     <Helmet titleTemplate="%s - My App" />
     <Routes>
       <Route index element={<HomePage />} />
-      <Route element={<AuthPage />} path="auth">
+      <Route
+        element={
+          <ProtectedRoute>
+            <AuthPage />
+          </ProtectedRoute>
+        }
+        path="auth"
+      >
         <Route element={<DashboardPage />} path="dashboard" />
       </Route>
     </Routes>

@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { setAccessToken } from 'App/actions';
-import { selectAccessToken } from 'App/selectors';
+import { selectIsUserAuthenticated } from 'App/selectors';
 import { Helmet } from 'components/Helmet';
 
 import { Header } from './Header';
@@ -32,7 +32,7 @@ const HomePage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
-  const accessToken = useSelector(selectAccessToken);
+  const isUserAuthenticated = useSelector(selectIsUserAuthenticated);
 
   // function to open Spotify Auth page
   const handleRedirectToSpotify: () => void = () => {
@@ -47,11 +47,11 @@ const HomePage = () => {
   }, []);
 
   useEffect(() => {
-    // if accessToken exists, redirect user to dashboard
-    if (typeof accessToken === 'string' && accessToken.length > 0) {
-      navigate('auth/dashboard');
+    // if user is authenticated, navigate to dashboard
+    if (isUserAuthenticated) {
+      navigate('auth/dashboard', { replace: true });
     }
-  }, [accessToken]);
+  }, [isUserAuthenticated]);
 
   return (
     <>
