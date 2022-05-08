@@ -49,7 +49,7 @@ const HomePage = () => {
   useEffect(() => {
     // if user is authenticated, navigate to dashboard
     if (isUserAuthenticated) {
-      navigate('auth/dashboard', { replace: true });
+      navigate('auth/profile', { replace: true });
     }
   }, [isUserAuthenticated]);
 

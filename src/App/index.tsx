@@ -2,7 +2,7 @@ import { Helmet } from 'react-helmet-async';
 import { Routes, Route } from 'react-router-dom';
 
 import AuthPage from 'pages/AuthPage';
-import DashboardPage from 'pages/AuthPage/DashboardPage';
+import ProfilePage from 'pages/AuthPage/ProfilePage';
 import HomePage from 'pages/HomePage';
 import { NavigatorOnline } from 'services/NavigatorOnline';
 import { Toast } from 'services/Toast';
@@ -22,7 +22,7 @@ const App = (): JSX.Element => (
         }
         path="auth"
       >
-        <Route element={<DashboardPage />} path="dashboard" />
+        <Route element={<ProfilePage />} path="profile" />
       </Route>
     </Routes>
     <Toast />
