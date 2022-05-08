@@ -9,6 +9,7 @@ const AuthPage = () => (
     flexGrow={1}
     sx={(theme) => ({
       background: theme.custom.background.gradient,
+      color: theme.palette.common.white,
     })}
   >
     <Sidebar />
