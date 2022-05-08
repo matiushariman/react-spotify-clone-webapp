@@ -7,8 +7,8 @@ import Menu from '@mui/material/Menu';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 
-import { UserMenuAvatar } from './UserMenuAvatar';
 import { UserMenuItem } from './UserMenuItem';
+import { UserAvatar } from '../components/UserAvatar';
 import { selectDisplayName, selectExternalUrl } from '../selectors';
 
 export const UserMenu = () => {
@@ -36,7 +36,7 @@ export const UserMenu = () => {
       <Button
         size="small"
         color="secondary"
-        startIcon={<UserMenuAvatar />}
+        startIcon={<UserAvatar />}
         id="user-menu-button"
         aria-controls={open ? 'user-menu' : undefined}
         aria-haspopup="true"

@@ -34,6 +34,16 @@ export const selectUserImage = createSelector(authPageSelector, (authPage) => {
   return null;
 });
 
+export const selectNoOfFollowers = createSelector(authPageSelector, (authPage) => {
+  if (authPage.profile !== null) {
+    if (authPage.profile.followers) {
+      return authPage.profile.followers.total;
+    }
+  }
+
+  return 0;
+});
+
 // loading selectors
 export const selectIsGetMeLoading = (state: RootState): boolean =>
   createLoadingSelector([getMeRequest])(state);

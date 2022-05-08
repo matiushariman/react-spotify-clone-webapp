@@ -1,5 +1,15 @@
-import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
 
-const ProfilePage = () => <Typography>Profile</Typography>;
+import { Helmet } from 'components/Helmet';
+import { UserProfile } from './UserProfile';
+
+const ProfilePage = () => (
+  <>
+    <Helmet title="My Profile" />
+    <Container>
+      <UserProfile />
+    </Container>
+  </>
+);
 
 export default ProfilePage;
