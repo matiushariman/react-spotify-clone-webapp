@@ -1,6 +1,11 @@
 import { createTheme } from '@mui/material/styles';
 
 export const theme = createTheme({
+  custom: {
+    background: {
+      gradient: 'linear-gradient(rgba(0,0,0,.9) 0,#121212 100%)',
+    },
+  },
   palette: {
     primary: { main: '#1db954' },
     secondary: { main: '#191414' },
@@ -39,6 +44,14 @@ export const theme = createTheme({
           letterSpacing: 'normal',
           textTransform: 'uppercase',
         },
+      },
+    },
+    MuiDrawer: {
+      styleOverrides: {
+        paper: ({ theme }) => ({
+          backgroundColor: theme.palette.common.black,
+          color: theme.palette.common.white,
+        }),
       },
     },
     MuiTypography: {
