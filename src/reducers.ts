@@ -1,6 +1,6 @@
 import { combineReducers, Action } from '@reduxjs/toolkit';
 import { persistReducer } from 'redux-persist';
-import sessionStorage from 'redux-persist/lib/storage';
+import sessionStorage from 'redux-persist/lib/storage/session';
 
 import { appReducer } from 'App/reducer';
 import { examplePageReducer } from 'pages/ExamplePage/reducer';
@@ -11,7 +11,7 @@ import { successReducer } from 'store/api/success/reducer';
 import { routerReducer } from './createReduxHistory';
 
 const persistConfig = {
-  key: window.location.pathname,
+  key: 'spotify-clone',
   storage: sessionStorage,
 };
 
