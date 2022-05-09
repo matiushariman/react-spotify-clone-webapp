@@ -6,17 +6,24 @@ import { configureStore, PreloadedState } from 'configureStore';
 
 import { Providers } from '../Providers';
 
+import type { To } from 'history';
 import type { ReactElement, ComponentType } from 'react';
 
 export type AllTheProvidersProps = {
   children: ReactElement;
 };
 
-const customRender = (
-  ui: ReactElement,
-  { preloadedState, ...renderOptions }: { preloadedState?: PreloadedState } = {},
-) => {
+export type RenderOptions = {
+  preloadedState?: PreloadedState;
+  route?: To;
+};
+
+const customRender = (ui: ReactElement, { preloadedState, route }: RenderOptions = {}) => {
   const { store, history } = configureStore(preloadedState);
+
+  if (route) {
+    history.push(route);
+  }
 
   const AllTheProviders = ({ children }: AllTheProvidersProps) => (
     <Provider store={store}>
@@ -26,7 +33,7 @@ const customRender = (
     </Provider>
   );
 
-  return render(ui, { wrapper: AllTheProviders as ComponentType, ...renderOptions });
+  return render(ui, { wrapper: AllTheProviders as ComponentType });
 };
 
 // re-export everything
