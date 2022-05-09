@@ -47,6 +47,7 @@ export const UserMenu = () => {
       </Button>
       <Menu
         id="user-menu"
+        aria-label="user menu"
         anchorEl={anchorEl}
         open={open}
         onClose={handleCloseMenu}
