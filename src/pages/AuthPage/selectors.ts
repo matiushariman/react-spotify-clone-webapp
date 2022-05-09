@@ -56,7 +56,7 @@ export const selectMyTopArtists = createSelector(authPageSelector, (authPage) =>
 
 // loading selectors
 export const selectIsGetMeLoading = (state: RootState): boolean =>
-  createLoadingSelector([getMeRequest])(state);
+  createLoadingSelector([getMeRequest])(state) || state.authPage.profile === null;
 
 export const selectIsLoadingMyTopArtists = (state: RootState): boolean =>
-  createLoadingSelector([getMyTopArtistsRequest])(state);
+  createLoadingSelector([getMyTopArtistsRequest])(state) || state.authPage.myTopArtists === null;
