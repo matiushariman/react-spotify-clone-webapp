@@ -20,6 +20,7 @@ export const MyTopArtistCard = ({ externalUrl, images, name, type }: MyTopArtist
 
   return (
     <Card
+      aria-label={`view artist ${name}`}
       onClick={handleOpenArtistOnSpotify}
       role="button"
       elevation={0}

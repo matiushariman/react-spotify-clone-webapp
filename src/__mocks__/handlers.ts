@@ -1,5 +1,6 @@
 import { rest } from 'msw';
 import { meHandlers } from './spotifyWebApi/me/getMe';
+import { getMyTopArtistsHandler } from './spotifyWebApi/me/getMyTopArtists';
 
 import type { SubmitCredentialRequestProps } from 'api/exampleApi';
 
@@ -12,4 +13,5 @@ export const handlers = [
     ),
   ),
   ...meHandlers,
+  ...getMyTopArtistsHandler,
 ];
